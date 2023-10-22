@@ -1,6 +1,3 @@
-35#!/usr/bin/env python
-# coding: utf-8
-35
 #Scraping data from Braacket.com for ease of use
 
 
@@ -11,20 +8,18 @@ import pandas as pd
 import numpy as np
 
 
-
 #constant variables that shouldnt be changed unless stated otherwise
 index = 0
 FinalData = ['Player Name', 'Placement', 'Total Matches', 'Wins', 'Draws', 'Losses', 'Win Rate', 'Score For', 'Score Against', 'Score Difference']
 
 
-
 #creates a data frame using panda with the correct information that relates to the data we will scrape from braacket.com
 df = pd.DataFrame(columns = FinalData)
-df
 
 
 #user input's the bracket they would like to retrieve data from
 BracketVR = str(input("What Mid-Week Mixup Bracket are you up to?"))
+FilePath = str(input("Please paste in the file path where you want the file to be located")
 #(changed to string as the input is currently a float or int)
 
 
@@ -77,4 +72,4 @@ while index != len(PlayersInOrder):
     df.loc[len(df)] = PlayerRankingSplitIntoList[index]
     index += 1
 
-df.to_csv(r'C:\Users\Matthew Getachew\Desktop\MIDWEEK\PY.TEST\test.csv')
+df.to_csv(r+FilePath)
